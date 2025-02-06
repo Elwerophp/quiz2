@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ChucknorrisService } from '../chucknorris.service';
+import { ListaService } from '../lista.service';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +10,20 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private chucknorrisService:ChucknorrisService,private chucklistaService:ListaService) {}
 
+  broma:any;
+  chucklista:any;
+
+  ngOnInit(){
+    this.chucknorrisService.getRandonJoke().subscribe((data)=>{
+      this.broma=data;
+    });
+    this.chucklistaService.getlista().subscribe((data)=>{
+      this.chucklista=data;
+    })
+  }
+
+ 
+    
 }
