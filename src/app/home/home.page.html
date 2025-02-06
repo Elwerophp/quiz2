@@ -1,10 +1,4 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
@@ -17,16 +11,13 @@
    
     <ion-card>
       <ion-card-header>
-        <ion-card-title>{{broma.title}}</ion-card-title>
+        <ion-card-title>{{broma.value}}</ion-card-title>
       </ion-card-header>
-      <ion-card-content>
-        {{broma.value}}
-      </ion-card-content>
     </ion-card>
     
-    <ng-container *ngIf="clista;else loading">
-      <ion-card *ngFor="let lista of lista">
-            {{lista}}
+    <ng-container *ngIf="lista;else loading">
+      <ion-card *ngFor="let item of lista">
+            {{item}}
       </ion-card>
     </ng-container>
 

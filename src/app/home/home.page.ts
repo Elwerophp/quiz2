@@ -10,17 +10,17 @@ import { ListaService } from '../lista.service';
 })
 export class HomePage {
 
-  constructor(private chucknorrisService:ChucknorrisService,private chucklistaService:ListaService) {}
+  constructor(private chucknorrisService:ChucknorrisService,private listaService:ListaService) {}
 
   broma:any;
-  chucklista:any;
+  lista:any;
 
   ngOnInit(){
     this.chucknorrisService.getRandonJoke().subscribe((data)=>{
       this.broma=data;
     });
-    this.chucklistaService.getlista().subscribe((data)=>{
-      this.chucklista=data;
+    this.listaService.getlista().subscribe((data)=>{
+      this.lista=data;
     })
   }
 
